@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "felmonadditional",
+  "id": "felmon",
   "version": "${version}",
 
   "name": "faRPG Mod",
@@ -14,19 +14,23 @@
   },
 
   "license": "MIT",
-  "icon": "assets/felmonadditional/icon.png",
+  "icon": "assets/felmon/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
       "ru.aniby.felmon.Main"
+    ],
+    "client": [
+      "ru.aniby.felmon.MainClient"
     ]
   },
   "mixins": [
-    "felmonadditional.mixins.json"
+    "felmon.mixins.json"
   ],
 
   "depends": {
+    "fabric-key-binding-api-v1": "*",
     "fabricloader": ">=0.13.3",
     "fabric": "*",
     "minecraft": "~1.18.2",
