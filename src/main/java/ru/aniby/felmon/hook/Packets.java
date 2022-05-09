@@ -12,6 +12,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import ru.aniby.felmon.Main;
 import ru.aniby.felmon.discord.MainRPC;
+import ru.aniby.felmon.hud.ui.AbilityManager;
 import ru.aniby.felmon.utils.Cooldowns;
 import ru.aniby.felmon.utils.Functions;
 import ru.aniby.felmon.utils.PlayerFunctions;
@@ -57,13 +58,9 @@ public class Packets {
                         if (translate != null)
                             Cooldowns.tryCooldown(translate, time);
                     }
-                    case -2 -> { // get world and biome names(for Discord RPC)
-                        String world = in.readUTF();
-                        String biome = in.readUTF();
-                        Main.LOGGER.info(world);
-                        MainRPC.presence.state = new TranslatableText(MainRPC.getWorldState(world, biome)).getString();
-                        MainRPC.presence.largeImageKey = world;
-                        MainRPC.update();
+                    case -2 -> { // ability enable/disable
+                        boolean status = in.readBoolean();
+                        AbilityManager.setActive(status);
                     }
                 }
             }

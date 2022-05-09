@@ -1,0 +1,25 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "felmon:ui/ability/empty.png",
+            "ascent": 9,
+            "height": 9,
+            "chars": ["\u0030"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:ui/ability/half.png",
+            "ascent": 9,
+            "height": 9,
+            "chars": ["\u0031"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:ui/ability/full.png",
+            "ascent": 9,
+            "height": 9,
+            "chars": ["\u0032"]
+        }
+    ]
+}

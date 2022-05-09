@@ -25,7 +25,7 @@ public class JoinServerMixin {
     private void onServerJoin(MinecraftClient client, Screen screen, ClientConnection connection, GameProfile profile, TelemetrySender telemetrySender, CallbackInfo ci) {
         VarHandler.update();
         new Thread(() -> {
-            while (PlayerFunctions.race.isEmpty() || PlayerFunctions.clazz.isEmpty() || client.world == null) {
+            while (PlayerFunctions.race.isEmpty() || PlayerFunctions.clazz.isEmpty() || client.world == null || client.player == null) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ignored) {}
@@ -37,7 +37,7 @@ public class JoinServerMixin {
             MainRPC.presence.smallImageKey = image;
             MainRPC.presence.smallImageText = race + (PlayerFunctions.clazz.equals("STANDART") ? "" : "-" + PlayerFunctions.getClassTranslate());
             MainRPC.presence.details = new TranslatableText("rpc.player").getString() + ": " + profile.getName();
-            MainRPC.presence.state = new TranslatableText("rpc.ws.null").getString();
+            MainRPC.setWorldState(PlayerFunctions.getWorldAndBiome(client));
             MainRPC.update();
         }, "PlayerDataGetter").start();
     }

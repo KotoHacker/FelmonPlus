@@ -1,10 +1,11 @@
 package ru.aniby.felmon.discord;
 
-import club.minnced.discord.rpc.DiscordEventHandlers;
-import club.minnced.discord.rpc.DiscordRPC;
-import club.minnced.discord.rpc.DiscordRichPresence;
 import net.minecraft.text.TranslatableText;
+import ru.aniby.felmon.discord.rpclib.DiscordEventHandlers;
+import ru.aniby.felmon.discord.rpclib.DiscordRPC;
+import ru.aniby.felmon.discord.rpclib.DiscordRichPresence;
 import ru.aniby.felmon.utils.Functions;
+import ru.aniby.felmon.utils.PlayerFunctions;
 
 import java.util.Arrays;
 
@@ -30,6 +31,14 @@ public class MainRPC {
 
     public static void update() {
         instance.Discord_UpdatePresence(presence);
+    }
+
+    public static void setWorldState(String[] data) {
+        assert data[0] != null;
+        PlayerFunctions.world = data[0];
+        PlayerFunctions.biome = data[1];
+        MainRPC.presence.state = new TranslatableText(data[1] == null ? "rpc.ws.null" : MainRPC.getWorldState(data[0], data[1])).getString();
+        MainRPC.presence.largeImageKey = data[0];
     }
 
     public static String getWorldState(String world, String biome) {

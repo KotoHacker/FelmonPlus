@@ -25,7 +25,7 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	implementation 'club.minnced:java-discord-rpc:2.0.1'
+	implementation 'club.minnced:discord-rpc-release:v3.4.0'
 	implementation 'org.json:json:20160810'
 }
 

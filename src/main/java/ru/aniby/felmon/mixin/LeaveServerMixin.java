@@ -18,6 +18,8 @@ public class LeaveServerMixin {
         VarHandler.update();
         PlayerFunctions.race = "";
         PlayerFunctions.clazz = "";
+        PlayerFunctions.biome = null;
+        PlayerFunctions.world = null;
         Packets.pluginUUID = null;
         MainRPC.menu();
     }
