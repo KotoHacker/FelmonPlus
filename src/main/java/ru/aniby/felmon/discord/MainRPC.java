@@ -15,7 +15,7 @@ public class MainRPC {
 
     public static void init() {
         DiscordEventHandlers handlers = new DiscordEventHandlers();
-        instance.Discord_Initialize("795331486332616754", handlers, true, null);
+        instance.Discord_Initialize("", handlers, true, null);
         presence.startTimestamp = System.currentTimeMillis() / 1000; // epoch second
         menu();
         // in a worker thread
