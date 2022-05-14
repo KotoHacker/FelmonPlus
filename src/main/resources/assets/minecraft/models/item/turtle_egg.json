@@ -1,0 +1,28 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "minecraft:item/turtle_egg"
+	},
+	"overrides": [
+		{"predicate": {"custom_model_data":1}, "model": "felmon:items/salis_mundus"},
+		{"predicate": {"custom_model_data":2}, "model": "felmon:items/papyrus"},
+		{"predicate": {"custom_model_data":3}, "model": "felmon:items/scroll"},
+		{"predicate": {"custom_model_data":4}, "model": "felmon:items/wither_bone"},
+		{"predicate": {"custom_model_data":5}, "model": "felmon:items/gills"},
+		{"predicate": {"custom_model_data":6}, "model": "felmon:items/bat_wing"},
+		{"predicate": {"custom_model_data":7}, "model": "felmon:items/magic_feather"},
+		{"predicate": {"custom_model_data":8}, "model": "felmon:items/primordial_fire"},
+		{"predicate": {"custom_model_data":9}, "model": "felmon:items/rainbow_knitting"},
+		{"predicate": {"custom_model_data":10}, "model": "felmon:items/spark_of_universe"},
+		{"predicate": {"custom_model_data":11}, "model": "felmon:items/horsehoe/iron"},
+		{"predicate": {"custom_model_data":12}, "model": "felmon:items/horsehoe/gold"},
+		{"predicate": {"custom_model_data":13}, "model": "felmon:items/horsehoe/diamond"},
+		{"predicate": {"custom_model_data":14}, "model": "felmon:items/fang"},
+		{"predicate": {"custom_model_data":15}, "model": "felmon:items/ghost_fabric"},
+		{"predicate": {"custom_model_data":16}, "model": "felmon:items/ruby"},
+		{"predicate": {"custom_model_data":17}, "model": "felmon:items/crystal_heart"},
+		{"predicate": {"custom_model_data":18}, "model": "felmon:items/goblin_eye"},
+		{"predicate": {"custom_model_data":19}, "model": "felmon:items/orc_eye"},
+		{"predicate": {"custom_model_data":20}, "model": "felmon:items/knowledge_book"}
+	]
+}

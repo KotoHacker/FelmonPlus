@@ -1,0 +1,158 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "felmon:items/horsehoe/diamond.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0030"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/horsehoe/gold.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0031"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/horsehoe/iron.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0032"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/spell_book/first.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0033"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/spell_book/second.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0034"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/spell_book/third.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0035"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/bat_wing.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0036"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/crystal_heart.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0037"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/fang.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0038"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/ghost_fabric.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0039"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/gills.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0040"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/goblin_eye.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0041"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/magic_feather.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0042"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/orc_eye.png",
+            "ascent": 32,
+            "height": 32,
+            "chars": ["\u0043"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/papyrus.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0044"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/primordial_fire.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0045"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/rainbow_knitting.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0046"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/ruby.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0047"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/salis_mundus.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0048"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/scroll.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0049"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/spark_of_universe.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0050"]
+        },
+        {
+            "type": "bitmap",
+            "file": "felmon:items/wither_bone.png",
+            "ascent": 8,
+            "height": 16,
+            "chars": ["\u0051"]
+        }
+    ]
+}

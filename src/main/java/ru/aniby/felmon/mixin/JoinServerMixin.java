@@ -14,7 +14,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ru.aniby.felmon.discord.MainRPC;
 import ru.aniby.felmon.utils.PlayerFunctions;
-import ru.aniby.felmon.utils.VarHandler;
 
 import java.util.Locale;
 
@@ -23,7 +22,6 @@ public class JoinServerMixin {
     @SneakyThrows
     @Inject(at = @At("RETURN"), method = "<init>")
     private void onServerJoin(MinecraftClient client, Screen screen, ClientConnection connection, GameProfile profile, TelemetrySender telemetrySender, CallbackInfo ci) {
-        VarHandler.update();
         new Thread(() -> {
             while (PlayerFunctions.race.isEmpty() || PlayerFunctions.clazz.isEmpty() || client.world == null || client.player == null) {
                 try {
