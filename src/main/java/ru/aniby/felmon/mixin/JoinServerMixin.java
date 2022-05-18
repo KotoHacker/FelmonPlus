@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ru.aniby.felmon.discord.MainRPC;
+import ru.aniby.felmon.hud.ui.ManaManager;
 import ru.aniby.felmon.utils.PlayerFunctions;
 
 import java.util.Locale;
@@ -23,7 +24,11 @@ public class JoinServerMixin {
     @Inject(at = @At("RETURN"), method = "<init>")
     private void onServerJoin(MinecraftClient client, Screen screen, ClientConnection connection, GameProfile profile, TelemetrySender telemetrySender, CallbackInfo ci) {
         new Thread(() -> {
-            while (PlayerFunctions.race.isEmpty() || PlayerFunctions.clazz.isEmpty() || client.world == null || client.player == null) {
+            while (PlayerFunctions.race.isEmpty() ||
+                    PlayerFunctions.clazz.isEmpty() ||
+                    client.world == null ||
+                    client.player == null ||
+                    ManaManager.getMaximum() == 0) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ignored) {}
@@ -31,9 +36,8 @@ public class JoinServerMixin {
             String image = PlayerFunctions.race.toLowerCase(Locale.ROOT);
             if (image.equals("human"))
                 image = "steve";
-            String race = PlayerFunctions.getRaceTranslate();
             MainRPC.presence.smallImageKey = image;
-            MainRPC.presence.smallImageText = race + (PlayerFunctions.clazz.equals("STANDART") ? "" : "-" + PlayerFunctions.getClassTranslate());
+            MainRPC.presence.smallImageText = PlayerFunctions.race + (PlayerFunctions.clazz.equals("STANDART") ? "" : "-" + PlayerFunctions.clazz);
             MainRPC.presence.details = new TranslatableText("rpc.player").getString() + ": " + profile.getName();
             MainRPC.setWorldState(PlayerFunctions.getWorldAndBiome(client));
             MainRPC.update();

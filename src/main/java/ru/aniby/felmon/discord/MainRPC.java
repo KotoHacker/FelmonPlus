@@ -15,7 +15,7 @@ public class MainRPC {
 
     public static void init() {
         DiscordEventHandlers handlers = new DiscordEventHandlers();
-        instance.Discord_Initialize("", handlers, true, null);
+        instance.Discord_Initialize("795331486332616754", handlers, true, null);
         presence.startTimestamp = System.currentTimeMillis() / 1000; // epoch second
         menu();
         // in a worker thread
@@ -94,11 +94,14 @@ public class MainRPC {
 
     public static void menu() {
         presence.largeImageKey = "1";
-        presence.largeImageText = "discord.gg/kmS8r5gefc";
+        presence.largeImageText = "play.felmon.xyz/discord";
         presence.smallImageKey = "iron_golem";
-        presence.smallImageText = new TranslatableText("rpc.menu.small_image").getString();
-        presence.details = new TranslatableText("rpc.menu.details").getString();
-        presence.state = new TranslatableText("rpc.menu.state").getString();
+        String sit = new TranslatableText("rpc.menu.small_image").getString();
+        presence.smallImageText = sit.equals("rpc.menu.small_image") ? "Offline" : sit;
+        String details = new TranslatableText("rpc.menu.details").getString();
+        presence.details = details.equals("rpc.menu.details") ? "In menu" : details;
+        String state = new TranslatableText("rpc.menu.state").getString();
+        presence.state = state.equals("rpc.menu.state") ? "Waiting for a miracle" : state;
         instance.Discord_UpdatePresence(presence);
     }
 }

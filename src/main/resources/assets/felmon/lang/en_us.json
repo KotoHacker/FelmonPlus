@@ -120,7 +120,7 @@
     "rpc.ws.the_nether.basalt_deltas": "Walking on basalt",
     "rpc.ws.the_end.a": "Being in... Space?",
     "rpc.ws.null": "Floating in space",
-    "rpc.menu.small_image": "Not in game",
+    "rpc.menu.small_image": "Offline",
     "rpc.menu.details": "In menu",
     "rpc.menu.state": "Waiting for a miracle"
 }

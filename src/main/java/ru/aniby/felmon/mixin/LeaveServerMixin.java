@@ -18,6 +18,7 @@ public class LeaveServerMixin {
         PlayerFunctions.clazz = "";
         PlayerFunctions.biome = null;
         PlayerFunctions.world = null;
+        PlayerFunctions.gameMode = null;
         Packets.pluginUUID = null;
         MainRPC.menu();
     }

@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.aniby.felmon.discord.MainRPC;
 import ru.aniby.felmon.hud.ui.AbilityManager;
+import ru.aniby.felmon.hud.ui.ManaManager;
 import ru.aniby.felmon.utils.Numbers;
 
 public class Main implements ModInitializer {
@@ -22,6 +23,7 @@ public class Main implements ModInitializer {
 
 		HudRenderCallback.EVENT.register((matrixStack, tickDelta) -> {
 			AbilityManager.render(matrixStack);
+			ManaManager.render(matrixStack);
 		});
 	}
 }

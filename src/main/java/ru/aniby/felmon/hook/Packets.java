@@ -2,17 +2,15 @@ package ru.aniby.felmon.hook;
 
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import ru.aniby.felmon.Main;
-import ru.aniby.felmon.discord.MainRPC;
 import ru.aniby.felmon.hud.ui.AbilityManager;
+import ru.aniby.felmon.hud.ui.ManaManager;
 import ru.aniby.felmon.utils.Cooldowns;
 import ru.aniby.felmon.utils.Functions;
 import ru.aniby.felmon.utils.PlayerFunctions;
@@ -34,8 +32,8 @@ public class Packets {
                 }
             }
         }
-        else if (pluginUUID == null && !client.isInSingleplayer() && MinecraftClient.getInstance().world != null)
-            send(0);
+//        else if (pluginUUID == null && !client.isInSingleplayer() && MinecraftClient.getInstance().world != null)
+//            send(0);
     }
 
     public static void Reader() {
@@ -47,6 +45,10 @@ public class Packets {
                 pluginUUID = in.readUTF();
                 PlayerFunctions.race = in.readUTF();
                 PlayerFunctions.clazz = in.readUTF();
+                ManaManager.setMaximum(in.readDouble());
+                ManaManager.setMana(in.readDouble());
+                send(0, pluginUUID);
+                Main.LOGGER.info("send: " + pluginUUID);
             }
             else {
                 switch (id) {
@@ -61,6 +63,16 @@ public class Packets {
                     case -2 -> { // ability enable/disable
                         boolean status = in.readBoolean();
                         AbilityManager.setActive(status);
+                    }
+                    case -3 -> { // update data
+                        String type = in.readUTF(); // race / class / maximum_mana / mana
+                        switch (type) {
+                            case "race" -> PlayerFunctions.race = in.readUTF(); // race value
+                            case "class" -> PlayerFunctions.clazz = in.readUTF(); // class value
+                            case "maximum_mana" -> ManaManager.setMaximum(in.readDouble()); // maximum mana
+                            case "remove_mana" -> ManaManager.removeMana(in.readDouble()); // mana to remove
+                            case "set_mana" -> ManaManager.setMana(in.readDouble()); // mana to remove
+                        }
                     }
                 }
             }
